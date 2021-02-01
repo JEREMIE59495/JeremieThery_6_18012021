@@ -30,8 +30,8 @@ exports.createSauce =  (req, res, next)=>{
 
   exports.deleteSauce = (req, res, next) => {
     Sauce.findOne({ _id: req.params.id })
-      .then(sauce => {
-        const filename = sauce.imageUrl.split('/images/')[1];
+      .then(sauces => {
+        const filename = sauces.imageUrl.split('/images/')[1];
         fs.unlink(`images/${filename}`, () => {
           Sauce.deleteOne({ _id: req.params.id })
             .then(() => console.log(filename) ,res.status(200).json({ message: 'Objet supprimé !'}))
@@ -63,8 +63,9 @@ exports.createSauce =  (req, res, next)=>{
     let like = req.body.like
     let userId = req.body.userId
     let sauceId = req.params.id
-   
+
     //like
+
     if (like === 1) {
       Sauce.updateOne({ _id: sauceId},
         {
@@ -112,4 +113,27 @@ exports.createSauce =  (req, res, next)=>{
         })
         .catch((error) => res.status(404).json({error}))
     }
+
+
+/*
+
+    if (like === 0) {
+      Sauce.findOne({ _id: sauceId })
+        .then((sauce) => {
+          //on annule le like
+          if (sauce.usersLiked.includes(userId)) {
+            Sauce.updateOne({_id: sauceId}, {
+                $pull: {usersLiked: userId},
+                $inc: {likes: -1},
+              })
+              .then(() => res.status(200).json({message: 'Like annulé '}))
+              .catch((error) => res.status(400).json({error}))
+          }*/
+
+
+
+
+
+          
+
   }
