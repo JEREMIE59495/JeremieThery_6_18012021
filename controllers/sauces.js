@@ -8,6 +8,7 @@ exports.createSauce =  (req, res, next)=>{
     const newSauce = new Sauce({
      ...sauceObject,
      imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
+     
     });
     newSauce.save()
     .then(() => res.status(201).json({message: 'Objet enregistre'}))
@@ -33,7 +34,7 @@ exports.createSauce =  (req, res, next)=>{
       .then(sauces => {
         const filename = sauces.imageUrl.split('/images/')[1];
         console.log(filename)
-        fs.unlink( `./images/${filename}`, () => {
+        fs.unlink( `images/${filename}`, () => {
           Sauce.deleteOne({ _id: req.params.id })
             .then(() => res.status(200).json({ message: 'Objet supprimé !'}))
             .catch(error => res.status(400).json({ error }));
