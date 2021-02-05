@@ -21,6 +21,7 @@ ouvrir une nouvelle fenêtre de terminal en gardant la 1er ouverte.
 Sur votre terminal vous allez avoir quelque chose comme ceci: "C: \ user \ admin \ projet6>"
 - collé le lien suivant sur votre terminal ==> git clone https://github.com/JEREMIE59495/JeremieThery_6_18012021.git backend <==
 - effectuer un cd backend sur votre terminal afin d'obtenir "C: \ user \ admin \ projet6 \ backend>
+- Insèrer le fichier conect.js dans le dossier backend  (reçu dans le livrable)
 - faire un npm install pour installer les dépendances
 - faire un npm install -g nodemon pour installer le serveur nodemon
 - puis tapez "nodemon server" pour lancer le serveur
