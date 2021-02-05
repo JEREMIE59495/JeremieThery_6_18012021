@@ -6,17 +6,12 @@ const path = require('path');
 
 const sauceRoutes= require ('./routes/sauces');
 const userRoutes = require('./routes/user');
-
+const conect =  require('./conect')
 
 
 //Connection a mongoDb
+mongoose.connect(conect)
 
-  mongoose.connect('mongodb+srv://jeremie:thery@cluster0.l2hz4.mongodb.net/test?retryWrites=true&w=majority',
-  { useNewUrlParser: true,
-    useUnifiedTopology: true })
-  .then(() => console.log('Connexion à MongoDB réussie !'))
-  .catch(() => console.log('Connexion à MongoDB échouée !'));
-  
 const app = express();
 
 //Création de header pour communication  CORS
