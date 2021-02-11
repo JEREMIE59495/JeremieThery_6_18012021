@@ -16,6 +16,7 @@ Sur votre terminal vous allez avoir quelque chose comme ceci: "C: \ user \ admin
 🔔 POUR LE BACKEND
 -
 dans le dossier projet6 créer un sous dossier backend
+-Inserer le fichier reçu dans le livrable
 ouvrir une nouvelle fenêtre de terminal en gardant la 1er ouverte.
 
 Sur votre terminal vous allez avoir quelque chose comme ceci: "C: \ user \ admin \ projet6>"
